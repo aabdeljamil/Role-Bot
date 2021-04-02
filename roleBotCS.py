@@ -31,9 +31,8 @@ async def on_raw_reaction_add(payload):
         if not msgToPin.pinned:
             await msgToPin.pin()
             return
-        else:
-            await chnl.send('Already Pinned!')
-            return
+        await chnl.send('Already Pinned!')
+        return
 
     Channel = client.get_channel(801703288340217906) #role assignment channel
 
@@ -600,6 +599,5 @@ async def on_ready():
 
     for guild in client.guilds:
         print(client.user, 'connected to guild ', guild.name, '#', guild.id)
-
 
 client.run(TOKEN)
