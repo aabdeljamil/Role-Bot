@@ -377,7 +377,7 @@ async def on_message(message):
     if message.author.bot:
         return
 
-    if "invite" in message.content().lower():
+    if "invite" in message.content.lower():
         user = client.get_user(193433037189545984)
         gen = client.get_channel(747979512041439321)
         try: 
