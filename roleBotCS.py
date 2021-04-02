@@ -379,7 +379,11 @@ async def on_message(message):
 
     if "invite" in message.content().lower():
         user = client.get_user(193433037189545984)
-        await message.channel.send(user.mention + ", do your thing!")
+        gen = client.get_channel(747979512041439321)
+        try: 
+            await gen.send(user.mention + ", do your thing!")
+        except:
+            print("Something went wrong. Either Bryce no longer exists, or the channel ID got fucked")
 
     failed = False
     noRoles = []
